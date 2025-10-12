@@ -1,5 +1,6 @@
 import React from 'react';
 import { LinkIcon, CodeBracketIcon } from '@heroicons/react/24/outline';
+import { images } from '../lib/images';
 
 export interface InfoCardProps {
   title: string;
@@ -12,6 +13,11 @@ export interface InfoCardProps {
   showcaseLabel?: string;
 }
 
+function getImageUrl(name: string) {
+  const key = `/src/assets/${name}`;
+  return images[key] as string | undefined;
+}
+
 const InfoCard: React.FC<InfoCardProps> = ({
   title,
   date,
@@ -22,12 +28,11 @@ const InfoCard: React.FC<InfoCardProps> = ({
   showcaseLink,
   showcaseLabel
 }) => {
-  const imageUrl = new URL(image, import.meta.url).href;
   return (
     <div className="flex flex-col bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-1 transition">
       {/* Image */}
       <img
-        src={imageUrl}
+        src={getImageUrl(image)}
         alt={title}
         className="w-full h-48 object-cover"
       />
