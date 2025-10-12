@@ -1,0 +1,82 @@
+import React from 'react';
+import { LinkIcon, CodeBracketIcon } from '@heroicons/react/24/outline';
+
+export interface InfoCardProps {
+  title: string;
+  date: string;
+  techStack: string;
+  blurb: string;
+  image: string;
+  sourceLink?: string;
+  showcaseLink?: string;
+  showcaseLabel?: string;
+}
+
+const InfoCard: React.FC<InfoCardProps> = ({
+  title,
+  date,
+  techStack,
+  blurb,
+  image,
+  sourceLink,
+  showcaseLink,
+  showcaseLabel
+}) => {
+  const imageUrl = new URL(image, import.meta.url).href;
+  return (
+    <div className="flex flex-col bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-1 transition">
+      {/* Image */}
+      <img
+        src={imageUrl}
+        alt={title}
+        className="w-full h-48 object-cover"
+      />
+
+      {/* Content */}
+      <div className="p-6 flex flex-col flex-grow">
+        <h3 className="text-2xl font-extrabold mb-1 leading-snug
+                      bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500
+                      bg-clip-text text-transparent">
+          {title}
+        </h3>
+
+        <p className="text-sm text-gray-400">{date}</p>
+
+        <p className="italic text-gray-600 mt-2">{techStack}</p>
+
+        <p className="text-gray-700 flex-grow mt-4">{blurb}</p>
+
+        {/* Links */}
+        <div className="mt-6 flex flex-wrap gap-4">
+          {showcaseLink && (
+            <a
+              href={showcaseLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-4 py-2 bg-indigo-500 text-white
+                        rounded-lg hover:bg-indigo-600 transition"
+            >
+              <LinkIcon className="w-5 h-5 mr-2" />
+              {showcaseLabel}
+            </a>
+          )}
+
+          {sourceLink && (
+            <a
+              href={sourceLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-indigo-600
+                        hover:underline transition"
+            >
+              <CodeBracketIcon className="w-5 h-5 mr-2" />
+              Source Code
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  )
+};
+
+export default InfoCard;
