@@ -32,7 +32,7 @@ const Home: React.FC = () => {
             <span className="inline-block w-1 h-8 bg-indigo-500 ml-1 animate-pulse align-bottom" />
           </h2>
 
-          <p className="text-lg text-gray-700">
+          <p className="text-lg text-gray-800 dark:text-gray-300">
             My specialties in software enginering span across the stack: I am just as comfortable writing code for delightful and responsive user interfaces as I am delving deep into
             complex back-end logic aiming to shave milliseconds off of computations and database operations at large scale.
 
@@ -57,7 +57,7 @@ const Home: React.FC = () => {
               </div>
 
               {/* info area: sits to the right on mobile, becomes full-width under image on md+ */}
-              <div className="flex-1 text-gray-600 text-sm md:w-full">
+              <div className="flex-1 text-gray-800 dark:text-gray-300 text-sm md:w-full">
                 {/* Education block */}
                 <div className="mb-3">
                   <div className="flex items-center space-x-2">

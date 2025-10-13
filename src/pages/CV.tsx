@@ -9,9 +9,9 @@ const Resume: React.FC = () => {
     <section className="max-w-6xl mx-auto px-4 py-16">
       <h1 className="text-5xl font-extrabold mb-6">My Resume</h1>
 
-      <div className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
-        <div className="p-4 border-b border-gray-100 flex items-center justify-between">
-          <div className="text-sm text-gray-600">{' '}</div>
+      <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-sm overflow-hidden">
+        <div className="p-4 border-b border-gray-100 dark:border-gray-700 flex items-center justify-between">
+          <div className="text-sm text-gray-600 dark:text-gray-300">{' '}</div>
           <a
             href={pdfPath}
             download="My_Resume.pdf"

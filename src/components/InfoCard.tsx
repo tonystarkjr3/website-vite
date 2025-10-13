@@ -29,7 +29,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
   showcaseLabel
 }) => {
   return (
-    <div className="flex flex-col bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transform hover:-translate-y-1 transition">
+    <div className="flex flex-col bg-white dark:bg-gray-800 rounded-xl shadow-lg dark:shadow-black/20 overflow-hidden hover:shadow-2xl transform hover:-translate-y-1 transition border border-gray-100 dark:border-gray-700">
       {/* Image */}
       <img
         src={getImageUrl(image)}
@@ -39,17 +39,19 @@ const InfoCard: React.FC<InfoCardProps> = ({
 
       {/* Content */}
       <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-2xl font-extrabold mb-1 leading-snug
-                      bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500
-                      bg-clip-text text-transparent">
+        <h3
+          className="text-2xl font-extrabold mb-1 leading-snug
+                     bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500
+                     bg-clip-text text-transparent"
+        >
           {title}
         </h3>
 
-        <p className="text-sm text-gray-400">{date}</p>
+        <p className="text-sm text-gray-600 dark:text-gray-300">{date}</p>
 
-        <p className="italic text-gray-600 mt-2">{techStack}</p>
+        <p className="italic text-gray-700 dark:text-gray-200 mt-2">{techStack}</p>
 
-        <p className="text-gray-700 flex-grow mt-4">{blurb}</p>
+        <p className="text-gray-800 dark:text-gray-100 flex-grow mt-4">{blurb}</p>
 
         {/* Links */}
         <div className="mt-6 flex flex-wrap gap-4">
@@ -71,7 +73,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
               href={sourceLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-indigo-600
+              className="inline-flex items-center text-indigo-600 dark:text-indigo-400
                         hover:underline transition"
             >
               <CodeBracketIcon className="w-5 h-5 mr-2" />

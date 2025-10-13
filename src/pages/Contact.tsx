@@ -75,35 +75,35 @@ const Contact: React.FC = () => {
   return (
     <section className="max-w-3xl mx-auto px-4 py-16">
       <h1 className="text-4xl font-extrabold mb-4">Get in touch!</h1>
-      <p className="text-gray-600 mb-8">
+      <p className="text-gray-700 dark:text-gray-300 mb-8">
         Shoot me a message below if you have any questions or ideas you want to share.
       </p>
 
-      <form onSubmit={handleSubmit} className="space-y-6 bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+      <form onSubmit={handleSubmit} className="space-y-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-sm">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <label className="flex flex-col">
-            <span className="text-sm font-medium mb-1">Name</span>
+            <span className="text-sm font-medium mb-1 text-gray-700 dark:text-gray-200">Name</span>
             <input
               name="name"
               value={form.name}
               onChange={handleChange}
               className={`px-3 py-2 rounded-md border focus:ring-2 focus:ring-sky-200 focus:border-sky-500 ${
-                errors.name ? "border-red-400" : "border-gray-200"
-              }`}
+                errors.name ? "border-red-400" : "border-gray-300 dark:border-gray-600"
+              } bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100`}
               placeholder="Your name"
             />
             {errors.name && <span className="text-sm text-red-500 mt-1">{errors.name}</span>}
           </label>
 
           <label className="flex flex-col">
-            <span className="text-sm font-medium mb-1">Email</span>
+            <span className="text-sm font-medium mb-1 text-gray-700 dark:text-gray-200">Email</span>
             <input
               name="email"
               value={form.email}
               onChange={handleChange}
               className={`px-3 py-2 rounded-md border focus:ring-2 focus:ring-sky-200 focus:border-sky-500 ${
-                errors.email ? "border-red-400" : "border-gray-200"
-              }`}
+                errors.email ? "border-red-400" : "border-gray-300 dark:border-gray-600"
+              } bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100`}
               placeholder="you@example.com"
               type="email"
             />
@@ -112,29 +112,29 @@ const Contact: React.FC = () => {
         </div>
 
         <label className="flex flex-col">
-          <span className="text-sm font-medium mb-1">Subject</span>
+          <span className="text-sm font-medium mb-1 text-gray-700 dark:text-gray-200">Subject</span>
           <input
             name="subject"
             value={form.subject}
             onChange={handleChange}
             className={`w-full px-3 py-2 rounded-md border focus:ring-2 focus:ring-sky-200 focus:border-sky-500 ${
-              errors.subject ? "border-red-400" : "border-gray-200"
-            }`}
+              errors.subject ? "border-red-400" : "border-gray-300 dark:border-gray-600"
+            } bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100`}
             placeholder="Topic or short summary"
           />
           {errors.subject && <span className="text-sm text-red-500 mt-1">{errors.subject}</span>}
         </label>
 
         <label className="flex flex-col">
-          <span className="text-sm font-medium mb-1">Message</span>
+          <span className="text-sm font-medium mb-1 text-gray-700 dark:text-gray-200">Message</span>
           <textarea
             name="message"
             value={form.message}
             onChange={handleChange}
             rows={6}
             className={`w-full px-3 py-2 rounded-md border focus:ring-2 focus:ring-sky-200 focus:border-sky-500 resize-vertical ${
-              errors.message ? "border-red-400" : "border-gray-200"
-            }`}
+              errors.message ? "border-red-400" : "border-gray-300 dark:border-gray-600"
+            } bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100`}
             placeholder="Write your message..."
           />
           {errors.message && <span className="text-sm text-red-500 mt-1">{errors.message}</span>}
@@ -143,7 +143,7 @@ const Contact: React.FC = () => {
         <div className="flex items-center justify-between">
           <div>
             {status === "sent" && <span className="text-sm text-green-600">{feedback}</span>}
-            {status === "sending" && <span className="text-sm text-gray-600">Sending message...</span>}
+            {status === "sending" && <span className="text-sm text-gray-700 dark:text-gray-300">Sending message...</span>}
             {status === "error" && <span className="text-sm text-red-600">{feedback}</span>}
           </div>
 
@@ -158,6 +158,7 @@ const Contact: React.FC = () => {
       </form>
     </section>
   );
+
 };
 
 export default Contact;
