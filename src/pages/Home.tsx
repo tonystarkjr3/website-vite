@@ -86,7 +86,7 @@ const Home: React.FC = () => {
                 <div>
                   <div className="flex items-center space-x-2">
                     <LinkIcon className="w-5 h-5 text-indigo-500" />
-                     <a href="/my-portfolio/resume" className="text-indigo-600 hover:underline">
+                     <a href="/resume" className="text-indigo-600 hover:underline">
                       More
                     </a>
                   </div>
