@@ -125,7 +125,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 flex items-center justify-center space-x-6">
           <div className="flex items-center space-x-6 text-gray-600 dark:text-gray-300">
             <a
-              href="https://www.linkedin.com/in/<your-linkedin-username>"
+              href="https://www.linkedin.com/in/anupam-pokharel-onebuddingnerd"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -135,7 +135,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             </a>
 
             <a
-              href="https://github.com/<yourghuser>"
+              href="https://github.com/tonystarkjr3"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
