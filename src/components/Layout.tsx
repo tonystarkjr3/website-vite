@@ -43,11 +43,11 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
           <nav className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-6">
-              {/* Home icon (left) */}
+              {/* Home icon (left), hidden on mobile */}
               <NavLink
                 to="/"
                 aria-label="Home"
-                className="flex items-center text-gray-700 dark:text-gray-200 hover:text-indigo-600"
+                className="hidden sm:flex items-center text-gray-700 dark:text-gray-200 hover:text-indigo-600"
               >
                 <HomeIcon className="w-6 h-6" />
               </NavLink>
