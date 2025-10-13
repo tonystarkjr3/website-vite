@@ -5,6 +5,8 @@ import profilePic from '../assets/portfolio-profile.png';
 import {
   AcademicCapIcon,
   BriefcaseIcon,
+  MapPinIcon,
+  LinkIcon
 } from '@heroicons/react/24/outline';
 
 const rotatingWords = ['creative', 'productive', 'entertained'];
@@ -55,12 +57,10 @@ const Home: React.FC = () => {
                 <AcademicCapIcon className="w-5 h-5 text-indigo-500" />
                 <span>BS in Statistics & ML, Carnegie Mellon</span>
               </div>
-              <a
-                href="/my-portfolio/resume"
-                className="pl-7 text-indigo-600 hover:underline"
-              >
-                More
-              </a>
+              <div className="flex items-center space-x-2">
+                <MapPinIcon className="w-5 h-5 text-indigo-500" />
+                <span>Pittsburgh, PA</span>
+              </div>
             </div>
 
             {/* Current role block */}
@@ -69,13 +69,26 @@ const Home: React.FC = () => {
                 <BriefcaseIcon className="w-5 h-5 text-indigo-500" />
                 <span>Sr Software Engineer at Visa, Inc.</span>
               </div>
-              <a
-                href="/my-portfolio/resume"
-                className="pl-7 text-indigo-600 hover:underline"
-              >
-                More
-              </a>
+              <div className="flex items-center space-x-2">
+                <MapPinIcon className="w-5 h-5 text-indigo-500" />
+                <span>Austin, TX</span>
+              </div>
             </div>
+
+            <div className="space-y-1">
+             <div className="flex items-center space-x-2">
+                <LinkIcon className="w-5 h-5 text-indigo-500" />
+                <span>
+                   <a
+                    href="/resume"
+                    className="text-indigo-600 hover:underline"
+                  >
+                    More
+                  </a>
+                </span>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
