@@ -48,7 +48,7 @@ const Home: React.FC = () => {
           <div className="w-full flex flex-row md:flex-col items-start md:items-center md:space-y-6">
             <div className="flex w-full md:block md:w-auto">
               {/* photo container: right margin on mobile, bottom margin on md+ */}
-              <div className="flex-none mr-6 md:mr-0 md:mb-4">
+              <div className="flex-none mr-6 md:mr-0 md:mb-[25px]">
                 <img
                   src={profilePic}
                   alt="Anupam Pokharel"
