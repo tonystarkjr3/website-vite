@@ -15,16 +15,12 @@ const navItems = [
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setTheme] = useState<'light' | 'dark' | null>(null);
 
-  // initialize theme on client only
+  // initialize theme on client only — default to light when no saved value
   useEffect(() => {
     const saved = localStorage.getItem('theme') as 'light' | 'dark' | null;
-    const prefersDark =
-      typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    const initial: 'light' | 'dark' = saved === 'light' || saved === 'dark' ? saved : prefersDark ? 'dark' : 'light';
+    const initial: 'light' | 'dark' = saved === 'light' || saved === 'dark' ? saved : 'light';
     setTheme(initial);
 
-    // apply to document
     const root = document.documentElement;
     if (initial === 'dark') root.classList.add('dark');
     else root.classList.remove('dark');
