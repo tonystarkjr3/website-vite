@@ -1,7 +1,7 @@
 name: Build and deploy to GitHub Pages
 on:
   push:
-    branches: [ main ]  # change if your main branch differs
+    branches: [ Main ]  # change if your main branch differs
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
