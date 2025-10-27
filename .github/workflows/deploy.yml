@@ -1,23 +1,30 @@
 name: Build and deploy to GitHub Pages
 on:
   push:
-    branches: [ Main ]  # change if your main branch differs
+    branches: [ Main ]  
+  workflow_dispatch:
+
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18' # change as needed
-    - name: Install and build
-      run: |
-        npm ci
-        npm run build   # ensure this produces dist/ or public/
-    - name: Deploy to gh-pages
-      uses: peaceiris/actions-gh-pages@v4
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist   # change to your build output folder
-        publish_branch: gh-pages
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build
+        run: npm run build   # must produce ./dist at repo root
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
