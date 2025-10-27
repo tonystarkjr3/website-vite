@@ -1,0 +1,23 @@
+name: Build and deploy to GitHub Pages
+on:
+  push:
+    branches: [ main ]  # change if your main branch differs
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18' # change as needed
+    - name: Install and build
+      run: |
+        npm ci
+        npm run build   # ensure this produces dist/ or public/
+    - name: Deploy to gh-pages
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist   # change to your build output folder
+        publish_branch: gh-pages
